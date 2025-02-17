@@ -4,13 +4,14 @@ using namespace std;
 
 class Calculator {
     private :
-        int Addcnt = 0;
-        int Mincnt = 0;
-        int Mulcnt = 0;
-        int Divcnt = 0;
+        int Addcnt;
+        int Mincnt;
+        int Mulcnt;
+        int Divcnt;
         
         
     public :
+        void init();
         float Add(float x, float y);
         float Min(float x, float y);
         float Mul(float x, float y);
@@ -18,6 +19,13 @@ class Calculator {
 
         void ShowOpcount();
 };
+
+void Calculator::init() {
+    Addcnt = 0;
+    Mincnt = 0;
+    Mulcnt = 0;
+    Divcnt = 0;
+}
 
 float Calculator::Add(float x, float y){
     Addcnt++;
@@ -45,9 +53,9 @@ int main() {
     
     cal.init();
     cout << cal.Add(3.2, 2.4) << endl;
-    cout << cal.Div(3.2, 2.4) << endl;
-    cout << cal.Min(3.2, 2.4) << endl;
-    cout << cal.Mul(3.2, 2.4) << endl;
+    cout << cal.Div(3.5, 1.7) << endl;
+    cout << cal.Min(2.2, 1.5) << endl;
+    cout << cal.Div(4.9, 1.2) << endl;
     
     cal.ShowOpcount();
     
