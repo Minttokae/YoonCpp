@@ -1,35 +1,27 @@
-#pragma once
-#include <iostream>
-#include <cstdlib> //exit
-#pragma warning(disable:4996)
-#include <conio.h> // getch
-#include <cstring>
-
-#define MAX_CLIENT 50
-#define NAME_LEN 10
-
-using namespace std;
+#include "header.h"
 
 
-void Mainpage();
+int main() {
+    int select;
 
-class Account {
-	const int ID;
-	char* name;
-	int myMoney;
-public:
-	Account(int ID, char name[NAME_LEN], int balance);
-	Account(const Account& copy);
-	int GetID() const;
-	char* Getname() const;
-	int Getmoney() const ;
-	void DepWith(int money, int type);
-	~Account();
-};
+    while (1) {
+        Mainpage();
 
-int FindID(int ID);
-bool CreateAccount();
-void Deposit();
-void Withdraw();
-void PrintAccounts();
-void Deleteall();
+        cin >> select;
+        cout << endl;
+
+        switch (select)
+        {
+        case 1: CreateAccount(); break;
+        case 2: Deposit();  break;
+        case 3: Withdraw();  break;
+        case 4: PrintAccounts(); break;
+        case 5: Deleteall(); exit(0);
+
+        default: 
+            cout << "잘못된 값" << endl << endl; continue;
+        }
+    }
+
+    return 0;
+}
