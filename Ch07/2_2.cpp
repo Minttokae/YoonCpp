@@ -18,6 +18,10 @@ public:
         cout << "ISBN : " << isbn << endl;
         cout << "Price : " << price << endl;
     }
+    ~Book() {
+        delete []title;
+        delete []isbn;
+    }
 };
 
 class EBook : public Book {
@@ -30,6 +34,9 @@ public:
     void ShowBookInfo() {
         Book::ShowBookInfo();
         cout << "DRMKey : " << DRMKey << endl;
+    }
+    ~EBook() {
+        delete []ERMKey;
     }
 };
 
