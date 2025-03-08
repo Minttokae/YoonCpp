@@ -11,10 +11,16 @@ public:
     {
         cout << '[' << xpos << ", " << ypos << ']' << endl;
     }
+/*
     Point& operator-(){
         xpos = -xpos;
         ypos = -ypos;
         return *this;
+    }
+    이렇게 하면 객체값을 변경하고 참조하게 됨.
+*/
+    Point operator-(){
+        return Point(-xpos, -ypos);
     }
 };
 
