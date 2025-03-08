@@ -22,7 +22,7 @@ bool operator==(const Point& pnt1, const Point& pnt2){
 
 bool operator!=(const Point& pnt1, const Point& pnt2){
     cout << "Good" << endl;
-    return (pnt1.xpos != pnt2.xpos) || (pnt1.ypos != pnt2.ypos);
+    return (pnt1.xpos != pnt2.xpos) || (pnt1.ypos != pnt2.ypos); // return !(pnt1 == pnt2) '앞서 오버로딩한 ==연산자 호출'
 }
 
 int main() {
